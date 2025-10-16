@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "code-review-mcp.fullname" . | default .Chart.Name }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: code-review-mcp
+  template:
+    metadata:
+      labels:
+        app: code-review-mcp
+    spec:
+      hostNetwork: true
+      containers:
+        - name: code-review-mcp
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8000
+          env:
+            - name: AZURE_OPENAI_ENDPOINT
+              valueFrom:
+                secretKeyRef:
+                  name: azure-openai-secrets
+                  key: AZURE_OPENAI_ENDPOINT
+            - name: AZURE_OPENAI_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: azure-openai-secrets
+                  key: AZURE_OPENAI_KEY
+            - name: MODEL_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: azure-openai-secrets
+                  key: MODEL_NAME

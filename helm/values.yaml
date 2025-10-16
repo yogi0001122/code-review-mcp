@@ -1,0 +1,11 @@
+image:
+  repository: image.registry.com/code-review-mcp
+  tag: latest
+service:
+  port: 8000
+azureOpenAI:
+  endpoint: ""   # set your Azure OpenAI endpoint here
+  key: ""        # set your Azure OpenAI key here
+  model_name: "gpt-4o-mini-2"
+
+resources: {}
