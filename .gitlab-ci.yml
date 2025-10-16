@@ -1,0 +1,27 @@
+stages:
+  - build
+  - deploy
+  - review
+
+variables:
+  DOCKER_IMAGE: "code-review-mcp:latest"
+
+build:
+  stage: build
+  script:
+    - docker build -t $DOCKER_IMAGE .
+    - echo "Image built successfully"
+
+deploy:
+  stage: deploy
+  script:
+    - minikube image load $DOCKER_IMAGE
+    - helm upgrade --install code-review-mcp ./helm -n ai-review --create-namespace
+    - echo "Deployment complete"
+
+review_mr:
+  stage: review
+  script:
+    - curl -X POST "http://mcp.local/mcp/tool-call" \
+      -H "Content-Type: application/json" \
+      -d '{"tool":"review_merge_request","arguments":{"diff":"sample diff"}}'

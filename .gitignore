@@ -1,0 +1,25 @@
+# Ignore environment variable files
+.env
+.env.*
+!.env.example
+
+# Optional: Ignore other local config or secrets
+*.local
+*.secret
+
+# ------------------------
+# Python
+# ------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.egg
+*.egg-info/
+.eggs/
+build/
+dist/
+wheels/
+*.manifest
+*.spec
