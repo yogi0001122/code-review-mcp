@@ -29,7 +29,7 @@
 
 - Python 3.11+
 - Docker (optional for containerization)
-- Kubernetes cluster (for deployment)
+- Kubernetes cluster (for deployment i.e. local setup using minikube)
 - Azure OpenAI subscription and deployed model
 - `kubectl` and Helm installed if deploying to Kubernetes
 
