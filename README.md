@@ -188,4 +188,4 @@ print("hello")
 - Create a feature branch: `git checkout -b feature/my-feature`
 - Commit changes: `git commit -m 'Add new feature'`
 - Push branch: `git push origin feature/my-feature`
-- Open a Pull R
+- Open a Pull Request
