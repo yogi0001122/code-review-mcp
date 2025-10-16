@@ -127,7 +127,7 @@ EOF
 ```
 
 ```bash
-helm install code-review-mcp ./helm-chart -n ai-review
+helm install code-review-mcp ./helm-chart -n ai-review --create-namespace
 ```
 
 4. Verify pod status:
