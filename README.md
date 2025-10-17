@@ -1,4 +1,4 @@
-# Code Review MCP is a Proof of Concept (PoC) that simulates the behaviour of a Model Context Protocol (MCP) system for automated code review.
+## **Code Review MCP** is a Proof of Concept (PoC) that simulates the behaviour of a Model Context Protocol (MCP) system for automated code review.
 It uses FastAPI to expose a simple HTTP interface that communicates with Azure OpenAI models (such as gpt-4o-mini-2) to analyse Merge Request (MR) diffs and provide intelligent review comments.
 
 ## How It Works
