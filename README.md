@@ -1,21 +1,21 @@
 # Code Review MCP is a Proof of Concept (PoC) that simulates the behaviour of a Model Context Protocol (MCP) system for automated code review.
 It uses FastAPI to expose a simple HTTP interface that communicates with Azure OpenAI models (such as gpt-4o-mini-2) to analyse Merge Request (MR) diffs and provide intelligent review comments.
 
-# How It Works
+## How It Works
 
 The FastAPI service accepts MR diffs or code snippets via an API endpoint.
 It constructs a prompt to send to the Azure OpenAI model for contextual code analysis.
 The model responds with review suggestions, which are returned as structured JSON output.
 This mimics the MCP-style interaction between a client (e.g., GitLab MR) and a review agent without using the official MCP SDK.
 
-# Purpose
+## Purpose
 This PoC is designed to:
 
 Explore how LLMs can automate MR code reviews.
 Validate communication between FastAPI services and Azure OpenAI endpoints.
 Provide a foundation for a future production-grade MCP-based system with improved context handling, guardrails, and scalability.
 
-# Future Roadmap — Full MCP Server Integration
+## Future Roadmap — Full MCP Server Integration
 
 This PoC is the foundation for a scalable, production-grade AI Code Review Assistant that will leverage the Model Context Protocol (MCP) architecture for deeper integration and automation.
 
